@@ -14,30 +14,18 @@ import CoreLocation
 let locationManager = CLLocationManager()
 let LocationPlaceMark = CLPlacemark()
 var placeMarksString = ""
-var placeMarksInfoLabel = UITextField()  
+var placeMarksInfoLabel = UILabel()
 
-class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
     
-        @IBOutlet weak var mapView: MKMapView!
-        let locationManager = CLLocationManager()
+    
+    @IBOutlet weak var zipcodeTF: UITextField! = nil
 
-        //p159 Show my Location
-        @IBAction func showMyLocation(sender: AnyObject) {
-            locationManager.startUpdatingLocation()
-            mapView.showsUserLocation = true
-        }
-
-        @IBAction func changeMapType(sender: AnyObject) {
-            let segmentor = sender as! UISegmentedControl
-            switch segmentor.selectedSegmentIndex {
-            case 0: mapView.mapType = MKMapType.Standard
-            case 1: mapView.mapType = MKMapType.Satellite
-            default: mapView.mapType = MKMapType.Hybrid
-            }
-        }
-
-        @IBAction func showPlacemarks(sender: AnyObject) {
-            //13
+    @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
+    
+    @IBAction func showPlacemarks(sender: AnyObject) {
+        //13 open (i) pop up panel
             if (placeMarksInfoLabel.hidden) {
                 placeMarksInfoLabel.text = placeMarksString
                 placeMarksInfoLabel.hidden = false
@@ -46,10 +34,11 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 placeMarksInfoLabel.hidden = true
             }
         }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       mapView.delegate = self
+      zipcodeTF.delegate = self
         
         //5 Location is set here
         let eiffelTowerLocation = CLLocationCoordinate2D(latitude:48.8582 , longitude:2.2945)
@@ -57,58 +46,34 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         let mapRegion = MKCoordinateRegion(center: eiffelTowerLocation, span: mapSpan)
         mapView.setRegion(mapRegion, animated: true)
         
-        //6 Annotation
-        let eiffelTowerAnnotation = MKPointAnnotation()
-        eiffelTowerAnnotation.title = "The Eiffel Tower"
-        eiffelTowerAnnotation.subtitle = "Paris, France"
-        mapView.addAnnotation(eiffelTowerAnnotation)
-        
         //Location Manager p158
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        mapView.showsUserLocation = true
 
         //placemark info label
-        /*
-        placeMarksInfoLabel.frame = CGRectMake(38, 100, 300, 200)
-        placeMarksInfoLabel.backgroundColor = UIColor.orangeColor()
+        /* */
+        placeMarksInfoLabel.frame = CGRectMake(55, 520, 270, 100)
+        placeMarksInfoLabel.backgroundColor = UIColor.whiteColor()
         placeMarksInfoLabel.layer.borderColor = UIColor.blackColor().CGColor
-        placeMarksInfoLabel.numberOfLines = 6
-        */
+        placeMarksInfoLabel.numberOfLines = 4
         placeMarksInfoLabel.layer.cornerRadius = 8.0
-        placeMarksInfoLabel.textAlignment = NSTextAlignment.Center
+        placeMarksInfoLabel.textAlignment = NSTextAlignment.Left
         placeMarksInfoLabel.hidden = true
+        placeMarksInfoLabel.userInteractionEnabled = true
+        placeMarksInfoLabel.adjustsFontSizeToFitWidth = true
         self.view.addSubview(placeMarksInfoLabel)
         
     }
     
-    // 8 view for annotation
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-        if annotation is MKUserLocation {
-            return nil
-        }
-        let pinReuseID = "thePin"
-        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(pinReuseID) as? MKPinAnnotationView
-        
-        if (pinView == nil) {
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinReuseID)
-            
-            pinView!.canShowCallout = true
-            pinView!.animatesDrop = true
-            pinView!.pinColor = .Purple
-        }
-        else {
-            pinView!.annotation = annotation
-        }
-        return pinView!
-    }
-    
-    
-    //12 pop-up info when hit (i) button
+    //12 info when hit (i) button
     func stringifyLocationInfo(placemark:CLPlacemark) {
         locationManager.stopUpdatingLocation()
-        placeMarksString = "Locality: \(placemark.locality)\n" + "Zip-Code: \(placemark.postalCode)\n" + "Country: \(placemark.country)\n" + "Lat/Long: (\(placemark.location.coordinate.latitude), \(placemark.location.coordinate.longitude))\n"
+        placeMarksString = "City: \(placemark.locality)\n" + "Zip: \(placemark.postalCode)\n" + "Country: \(placemark.country)\n" + "(\(placemark.location.coordinate.latitude), \(placemark.location.coordinate.longitude))"
     }
+    
     
     //did update locations
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -134,7 +99,20 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             
         })
     }
-
+    
+    func textFieldShouldEndEditing(zipcodeTF: UITextField) -> Bool {
+        //println("TextField should end editing method called")
+        locationManager.startUpdatingLocation()
+        mapView.showsUserLocation = true
+        return true;
+    }
+    func textFieldShouldReturn(zipcodeTF: UITextField) -> Bool
+        // called when 'return' key pressed. return NO to ignore.
+        {
+        zipcodeTF.resignFirstResponder()
+            return true;
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
