@@ -10,6 +10,9 @@ import UIKit
 import CoreData
 
 class MasterTableViewController: UITableViewController {
+    
+    
+    
     var teamDetailsArray:Array<AnyObject> = []
     
     override func viewDidLoad() {

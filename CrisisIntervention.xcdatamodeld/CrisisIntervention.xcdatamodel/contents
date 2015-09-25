@@ -6,10 +6,11 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="facility" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="zipcode" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TeamDetail" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="TeamDetail" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

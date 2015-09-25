@@ -13,12 +13,19 @@ import CoreData
 class DetailsViewController: UIViewController {
     
     @IBOutlet weak var cityTF: UITextField!
-    @IBOutlet weak var coordinatorTF: UITextField!
-    @IBOutlet weak var emailTF: UITextField!
-    @IBOutlet weak var facilityTF: UITextField!
     @IBOutlet weak var stateTF: UITextField!
     @IBOutlet weak var zipcodeTF: UITextField!
-   
+    
+    @IBOutlet weak var coordinatorTF: UITextField!
+    
+    @IBOutlet weak var emailTF: UITextField!
+    
+    @IBOutlet weak var phoneTF: UITextField!
+    
+    @IBOutlet weak var nameTF: UITextField! //dispatch
+    
+    @IBOutlet weak var facilityTF: UITextField!
+    
     
     var featuredItem:TeamDetail?
     
@@ -27,11 +34,13 @@ class DetailsViewController: UIViewController {
         // page 121
         if(featuredItem != nil){
             cityTF.text = featuredItem!.city
-            coordinatorTF.text = "\(featuredItem!.coordinator)"
-            emailTF.text = "\(featuredItem!.email)"
-            facilityTF.text = "\(featuredItem!.facility)"
             stateTF.text = "\(featuredItem!.state)"
             zipcodeTF.text = "\(featuredItem!.zipcode)"
+            coordinatorTF.text = "\(featuredItem!.coordinator)"
+            emailTF.text = "\(featuredItem!.email)"
+            phoneTF.text = "\(featuredItem!.phone)"
+            nameTF.text = "\(featuredItem!.name)"
+            facilityTF.text = "\(featuredItem!.facility)"
             
         }
     }
@@ -54,22 +63,26 @@ class DetailsViewController: UIViewController {
         //Check if its an already existing detail
         if (featuredItem != nil){
             featuredItem?.city = cityTF.text
-            featuredItem?.coordinator = coordinatorTF.text
-            featuredItem?.email = emailTF.text
-            featuredItem?.facility = facilityTF.text
             featuredItem?.state = stateTF.text
             featuredItem?.zipcode = NSString(format: "%@", zipcodeTF.text).integerValue
+            featuredItem?.coordinator = coordinatorTF.text
+            featuredItem?.email = emailTF.text
+            featuredItem?.phone = NSString(format: "%@", phoneTF.text).integerValue
+            featuredItem?.name = nameTF.text
+            featuredItem?.facility = facilityTF.text
             
         }
         else {
             //3.1
             var newTeamDetail:TeamDetail = NSEntityDescription.insertNewObjectForEntityForName("TeamDetail", inManagedObjectContext: manObjContext) as! TeamDetail
             newTeamDetail.city = cityTF.text
-            newTeamDetail.coordinator = coordinatorTF.text
-            newTeamDetail.email = emailTF.text
-            newTeamDetail.facility = facilityTF.text
             newTeamDetail.state = stateTF.text
             newTeamDetail.zipcode = NSString(format: "%@", zipcodeTF.text).integerValue
+            newTeamDetail.coordinator = coordinatorTF.text
+            newTeamDetail.email = emailTF.text
+            newTeamDetail.phone = NSString(format: "%@", phoneTF.text).integerValue
+            newTeamDetail.name = nameTF.text
+            newTeamDetail.facility = facilityTF.text
             
         }
         
