@@ -12,7 +12,7 @@ import CoreData
 class TeamDetail: NSManagedObject {
 
     @NSManaged var zipcode: NSNumber
-    @NSManaged var phone: NSNumber
+    @NSManaged var phone: String
     @NSManaged var city: String
     @NSManaged var name: String
     @NSManaged var coordinator: String

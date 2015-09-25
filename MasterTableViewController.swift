@@ -30,6 +30,7 @@ class MasterTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let theAppDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+       
         let manObjContext:NSManagedObjectContext = theAppDelegate.managedObjectContext!
         let fetchRequest = NSFetchRequest(entityName: "TeamDetail")
         teamDetailsArray = manObjContext.executeFetchRequest(fetchRequest, error: nil)!
@@ -67,26 +68,9 @@ class MasterTableViewController: UITableViewController {
         cell.textLabel?.textColor = UIColor.blueColor()
         cell.textLabel?.font = UIFont(name: "Futura", size: 20)
         
-        cell.detailTextLabel?.text = "\(currentTeamDetail.zipcode)"
+        cell.detailTextLabel?.text = "\(currentTeamDetail.state), \(currentTeamDetail.zipcode), \(currentTeamDetail.coordinator) \(currentTeamDetail.phone), \(currentTeamDetail.email), \(currentTeamDetail.name), \(currentTeamDetail.facility)"
         cell.detailTextLabel?.textColor = UIColor.blueColor()
-        cell.detailTextLabel?.font = UIFont(name: "Arial", size:16)
-
-        cell.detailTextLabel?.text = currentTeamDetail.coordinator
-        cell.detailTextLabel?.textColor = UIColor.blueColor()
-        cell.detailTextLabel?.font = UIFont(name: "Arial", size:16)
-        
-        cell.detailTextLabel?.text = currentTeamDetail.email
-        cell.detailTextLabel?.textColor = UIColor.blueColor()
-        cell.detailTextLabel?.font = UIFont(name: "Arial", size:16)
-        
-        cell.detailTextLabel?.text = currentTeamDetail.facility
-        cell.detailTextLabel?.textColor = UIColor.blueColor()
-        cell.detailTextLabel?.font = UIFont(name: "Arial", size:16)
-        
-        cell.detailTextLabel?.text = currentTeamDetail.state
-        cell.detailTextLabel?.textColor = UIColor.blueColor()
-        cell.detailTextLabel?.font = UIFont(name: "Arial", size:16)
-        
+        cell.detailTextLabel?.font = UIFont(name: "Arial", size:12)
         return cell
     }
     
