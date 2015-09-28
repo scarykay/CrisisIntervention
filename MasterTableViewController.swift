@@ -1,16 +1,9 @@
-//
 //  MasterTableViewController.swift
-//  CrisisIntervention
-//
-//  Created by Mary K Paquette on 9/11/15.
-//  Copyright (c) 2015 Mary K Paquette. All rights reserved.
-//
 
 import UIKit
 import CoreData
 
 class MasterTableViewController: UITableViewController {
-    
     
     
     var teamDetailsArray:Array<AnyObject> = []

@@ -61,85 +61,6 @@
             </objects>
             <point key="canvasLocation" x="-914.0625" y="-184.3309859154929"/>
         </scene>
-        <!--CIT Collection-->
-        <scene sceneID="pFD-mk-HN7">
-            <objects>
-                <collectionViewController title="CIT Collection" id="fh2-ke-JtR" customClass="TeamCollectionVC" customModule="CrisisIntervention" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="X4N-cv-l8F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yBk-cw-zxT">
-                            <size key="itemSize" width="136" height="101"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TeamEntry" id="MC3-ib-a3n" customClass="movieCollectionViewCell">
-                                <rect key="frame" x="0.0" y="64" width="134" height="101"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="136" height="101"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTV-y7-Rn1">
-                                            <rect key="frame" x="0.0" y="23" width="136" height="78"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="rTV-y7-Rn1" firstAttribute="leading" secondItem="MC3-ib-a3n" secondAttribute="leading" id="NeA-Kv-eyZ"/>
-                                    <constraint firstItem="rTV-y7-Rn1" firstAttribute="top" secondItem="MC3-ib-a3n" secondAttribute="top" constant="23" id="Skd-lm-ZKB"/>
-                                    <constraint firstAttribute="trailing" secondItem="rTV-y7-Rn1" secondAttribute="trailing" id="UR0-3S-hMu"/>
-                                    <constraint firstAttribute="bottom" secondItem="rTV-y7-Rn1" secondAttribute="bottom" id="osu-pG-WdR"/>
-                                </constraints>
-                                <size key="customSize" width="136" height="101"/>
-                            </collectionViewCell>
-                        </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerCell" id="pxs-R2-C7D">
-                            <rect key="frame" x="0.0" y="64" width="375" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="state" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLQ-O0-3Q6">
-                                    <rect key="frame" x="0.0" y="0.0" width="187" height="39"/>
-                                    <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yx8-4k-j73">
-                                    <rect key="frame" x="188" y="11" width="187" height="28"/>
-                                    <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="yx8-4k-j73" secondAttribute="trailing" id="A6d-zL-hcE"/>
-                                <constraint firstItem="yx8-4k-j73" firstAttribute="top" secondItem="pxs-R2-C7D" secondAttribute="top" constant="11" id="CnI-cC-Leu"/>
-                                <constraint firstItem="QLQ-O0-3Q6" firstAttribute="top" secondItem="pxs-R2-C7D" secondAttribute="top" id="Wlh-vV-4ei"/>
-                                <constraint firstItem="QLQ-O0-3Q6" firstAttribute="leading" secondItem="pxs-R2-C7D" secondAttribute="leading" id="YFY-Mb-Y6g"/>
-                                <constraint firstItem="QLQ-O0-3Q6" firstAttribute="width" secondItem="yx8-4k-j73" secondAttribute="width" id="gfg-GF-OOt"/>
-                                <constraint firstItem="yx8-4k-j73" firstAttribute="leading" secondItem="QLQ-O0-3Q6" secondAttribute="trailing" constant="1" id="nPa-m2-MRL"/>
-                                <constraint firstAttribute="bottom" secondItem="yx8-4k-j73" secondAttribute="bottom" constant="11" id="qev-Yz-Xgh"/>
-                                <constraint firstItem="yx8-4k-j73" firstAttribute="baseline" secondItem="QLQ-O0-3Q6" secondAttribute="baseline" id="uHN-lf-2h0"/>
-                            </constraints>
-                        </collectionReusableView>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="uE5-xg-bsT"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gAq-Rt-zmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-869.5" y="624.5"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0jl-KV-00u">
             <objects>
@@ -185,7 +106,7 @@
                                     <action selector="showPlacemarks:" destination="akj-02-uz9" eventType="touchUpInside" id="2oS-d9-C3R"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex. 55419" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZl-3h-4vN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZl-3h-4vN">
                                 <rect key="frame" x="123" y="248" width="129" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -206,7 +127,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fh2-ke-JtR" kind="push" identifier="findCIT" id="9rT-fF-Xl5"/>
+                                    <segue destination="2Kq-EK-bRM" kind="show" identifier="findCIT" id="xtV-I9-8VT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -229,6 +150,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyN-OZ-6GE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1464.5" y="380.5"/>
+        </scene>
+        <!--CIT Collection View-->
+        <scene sceneID="czG-rF-kYX">
+            <objects>
+                <tableViewController restorationIdentifier="CITCollectionViewController" storyboardIdentifier="CIT Collection View" id="2Kq-EK-bRM" customClass="CITCollectionViewController" customModule="CrisisIntervention" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="H2K-h9-wRM" userLabel="Table View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCollection" textLabel="cAh-M9-YnL" detailTextLabel="qNq-Kb-1zV" style="IBUITableViewCellStyleSubtitle" id="XI4-Tj-ZIu" customClass="TableViewCell" customModule="CrisisIntervention" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XI4-Tj-ZIu" id="RYA-2v-Neg">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cAh-M9-YnL">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qNq-Kb-1zV">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NormalCell" textLabel="TD3-eQ-UKh" detailTextLabel="SuT-eI-5Nj" style="IBUITableViewCellStyleSubtitle" id="nkd-wl-VM1" customClass="TableViewCell" customModule="CrisisIntervention" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nkd-wl-VM1" id="7cT-aB-zTU">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TD3-eQ-UKh">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SuT-eI-5Nj">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2Kq-EK-bRM" id="CFC-3s-4XP"/>
+                            <outlet property="delegate" destination="2Kq-EK-bRM" id="j6B-lG-FRC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CIT Collection View" id="fe9-KT-X4V"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y48-qt-xNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-914.5" y="592.5"/>
         </scene>
         <!--manage CIT info-->
         <scene sceneID="ufC-wZ-h7g">
