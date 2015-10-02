@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-@UIApplicationMain
+/*@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -107,5 +107,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+*/
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var window: UIWindow?
+    lazy var coreDataStack = CoreDataStack()
+    
+    func application(application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions:
+        [NSObject : AnyObject]?) -> Bool {
+            
+            let navigationController = window!.rootViewController
+                as! UINavigationController
+            let listViewController =
+            navigationController.topViewController
+                as! MasterTableViewController
+            listViewController.coreDataStack = coreDataStack
+            
+            return true
+    }
+    
+    func applicationWillTerminate(application: UIApplication) {
+        coreDataStack.saveContext()
+    }
+    
 }
 

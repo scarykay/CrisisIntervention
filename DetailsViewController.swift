@@ -10,6 +10,14 @@
 import UIKit
 import CoreData
 
+protocol TeamDetailDelegate {
+    
+    func didFinishViewController(
+        viewController:DetailsViewController, didSave:Bool)
+    
+}
+
+
 class DetailsViewController: UIViewController {
     
     @IBOutlet weak var cityTF: UITextField!
