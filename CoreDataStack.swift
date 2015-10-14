@@ -38,7 +38,8 @@ public class CoreDataStack {
     let bundle = NSBundle.mainBundle()
     let modelURL =
       bundle.URLForResource(modelName, withExtension:"momd")
-    model = NSManagedObjectModel(contentsOfURL: modelURL!)!
+      model = NSManagedObjectModel(contentsOfURL: modelURL!)!
+    
     
     psc =
       NSPersistentStoreCoordinator(managedObjectModel:model)
@@ -58,9 +59,15 @@ public class CoreDataStack {
     
     // 2
     var fileManagerError:NSError? = nil
-    let didCopyDatabase = NSFileManager.defaultManager()
-      .copyItemAtURL(seededDatabaseURL!, toURL: storeURL,
-        error: &fileManagerError)
+    let didCopyDatabase: Bool
+    do {
+      try NSFileManager.defaultManager()
+            .copyItemAtURL(seededDatabaseURL!, toURL: storeURL)
+      didCopyDatabase = true
+    } catch let error as NSError {
+      fileManagerError = error
+      didCopyDatabase = false
+    }
     
     // 3
     if didCopyDatabase {
@@ -73,11 +80,17 @@ public class CoreDataStack {
       let shmURL = documentsURL.URLByAppendingPathComponent(
         "CrisisIntervention.sqlite-shm")
       
-      let didCopySHM = NSFileManager.defaultManager()
-        .copyItemAtURL(seededSHMURL!, toURL: shmURL,
-          error: &fileManagerError)
+      let didCopySHM: Bool
+      do {
+        try NSFileManager.defaultManager()
+                .copyItemAtURL(seededSHMURL!, toURL: shmURL)
+        didCopySHM = true
+      } catch let error as NSError {
+        fileManagerError = error
+        didCopySHM = false
+      }
       if !didCopySHM {
-        println("Error seeding Core Data: \(fileManagerError)")
+        print("Error seeding Core Data: \(fileManagerError)")
         abort()
       }
       
@@ -89,30 +102,40 @@ public class CoreDataStack {
         .URLForResource("CrisisIntervention",
           withExtension: "sqlite-wal")
       
-      let didCopyWAL = NSFileManager.defaultManager()
-        .copyItemAtURL(seededWALURL!, toURL: walURL,
-          error: &fileManagerError)
+      let didCopyWAL: Bool
+      do {
+        try NSFileManager.defaultManager()
+                .copyItemAtURL(seededWALURL!, toURL: walURL)
+        didCopyWAL = true
+      } catch let error as NSError {
+        fileManagerError = error
+        didCopyWAL = false
+      }
       if !didCopyWAL {
-        println("Error seeding Core Data: \(fileManagerError)")
+        print("Error seeding Core Data: \(fileManagerError)")
         abort()
       }
       
-      println("Seeded Core Data")
+      print("Seeded Core Data")
     }
     
     // 6 add the seeded database store to the persistent store coordinator
     var error: NSError? = nil
     let options = [NSInferMappingModelAutomaticallyOption:true,
       NSMigratePersistentStoresAutomaticallyOption:true]
-    store = psc.addPersistentStoreWithType(NSSQLiteStoreType,
-      configuration: nil,
-      URL: storeURL,
-      options: options,
-      error: &error)
+    do {
+      store = try psc.addPersistentStoreWithType(NSSQLiteStoreType,
+        configuration: nil,
+        URL: storeURL,
+        options: options)
+    } catch let error1 as NSError {
+      error = error1
+      store = nil
+    }
 
     // 7
     if store == nil {
-      println("Error adding persistent store: \(error)")
+      print("Error adding persistent store: \(error)")
       abort()
     }
   }
@@ -123,7 +146,7 @@ public class CoreDataStack {
   
     let urls =
       fileManager.URLsForDirectory(.DocumentDirectory,
-        inDomains: .UserDomainMask) as! [NSURL]
+        inDomains: .UserDomainMask) 
   
     return urls[0]
   }
@@ -131,9 +154,16 @@ public class CoreDataStack {
   func saveContext() {
     context.performBlock { () -> Void in
       var error: NSError? = nil
-      if self.context.hasChanges && !self.context.save(&error) {
-        println("Could not save: \(error), \(error?.userInfo)")
-        abort()
+      if self.context.hasChanges {
+        do {
+          try self.context.save()
+        } catch let error1 as NSError {
+          error = error1
+          print("Could not save: \(error), \(error?.userInfo)")
+          abort()
+        } catch {
+          fatalError()
+        }
       }
     }
   }

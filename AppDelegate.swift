@@ -9,15 +9,26 @@
 import UIKit
 import CoreData
 
-/*@UIApplicationMain
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
+    lazy var coreDataStack = CoreDataStack()
+  
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+            
+         /* let navigationController = window?.rootViewController as! UINavigationController
+           let listViewController = navigationController.topViewController as? MasterTableViewController
+           listViewController?.coreDataStack = coreDataStack
+        */
+        if let navigationController = window?.rootViewController as? UINavigationController {
+            if let listViewController = navigationController.viewControllers[0] as? MasterTableViewController {
+                //firstVC.someProperty = someValue
+                //listViewController?.coreDataStack = coreDataStack
+                listViewController.coreDataStack = coreDataStack
+            }
+        }
+            return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -38,18 +49,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+   /* func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
-    }
+    }*/
+    
+func applicationWillTerminate(application: UIApplication) {
+coreDataStack.saveContext()
+}
+
 
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "BSF.CrisisIntervention" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        return urls[urls.count-1] as! NSURL
+        return urls[urls.count-1]
     }()
 
     lazy var managedObjectModel: NSManagedObjectModel = {
@@ -65,7 +81,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("CrisisIntervention.sqlite")
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
-        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
+        do {
+            try coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+        } catch var error1 as NSError {
+            error = error1
             coordinator = nil
             // Report any error we got.
             var dict = [String: AnyObject]()
@@ -77,10 +96,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog("Unresolved error \(error), \(error!.userInfo)")
             abort()
+        } catch {
+            fatalError()
         }
         
         return coordinator
-    }()
+        }()
 
     lazy var managedObjectContext: NSManagedObjectContext? = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
@@ -98,40 +119,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func saveContext () {
         if let moc = self.managedObjectContext {
             var error: NSError? = nil
-            if moc.hasChanges && !moc.save(&error) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                NSLog("Unresolved error \(error), \(error!.userInfo)")
-                abort()
+            if moc.hasChanges {
+                do {
+                    try moc.save()
+                } catch let error1 as NSError {
+                    error = error1
+                    // Replace this implementation with code to handle the error appropriately.
+                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    NSLog("Unresolved error \(error), \(error!.userInfo)")
+                    abort()
+                }
             }
         }
-    }
-
-}
-*/
-
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    var window: UIWindow?
-    lazy var coreDataStack = CoreDataStack()
-    
-    func application(application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions:
-        [NSObject : AnyObject]?) -> Bool {
-            
-            let navigationController = window!.rootViewController
-                as! UINavigationController
-            let listViewController =
-            navigationController.topViewController
-                as! MasterTableViewController
-            listViewController.coreDataStack = coreDataStack
-            
-            return true
-    }
-    
-    func applicationWillTerminate(application: UIApplication) {
-        coreDataStack.saveContext()
     }
     
 }

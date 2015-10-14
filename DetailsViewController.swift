@@ -34,6 +34,16 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var facilityTF: UITextField!
     
+    /*var journalEntry: TeamDetail! {
+        didSet {
+            self.configureView()
+        }
+    }*/
+    
+    var context: NSManagedObjectContext!
+    var delegate:TeamDetailDelegate?
+    
+    
     
     var featuredItem:TeamDetail?
     
@@ -56,7 +66,8 @@ class DetailsViewController: UIViewController {
     
     @IBAction func cancel(sender: UIBarButtonItem) {
         // this now goes all the way HOME ------ [0]
-        self.navigationController?.popToViewController(navigationController!.viewControllers[0] as! UIViewController, animated: true)
+        //self.navigationController?.popToViewController(navigationController!.viewControllers[0] , animated: true)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     
@@ -72,7 +83,7 @@ class DetailsViewController: UIViewController {
         if (featuredItem != nil){
             featuredItem?.city = cityTF.text
             featuredItem?.state = stateTF.text
-            featuredItem?.zipcode = NSString(format: zipcodeTF.text).integerValue
+            featuredItem?.zipcode = zipcodeTF.text
             featuredItem?.coordinator = coordinatorTF.text
             featuredItem?.email = emailTF.text
             featuredItem?.phone = phoneTF.text
@@ -82,10 +93,10 @@ class DetailsViewController: UIViewController {
         }
         else {
             //3.1
-            var newTeamDetail:TeamDetail = NSEntityDescription.insertNewObjectForEntityForName("TeamDetail", inManagedObjectContext: manObjContext) as! TeamDetail
+            let newTeamDetail:TeamDetail = NSEntityDescription.insertNewObjectForEntityForName("TeamDetail", inManagedObjectContext: manObjContext) as! TeamDetail
             newTeamDetail.city = cityTF.text
             newTeamDetail.state = stateTF.text
-            newTeamDetail.zipcode = NSString(string: zipcodeTF.text).integerValue
+            newTeamDetail.zipcode = zipcodeTF.text
             newTeamDetail.coordinator = coordinatorTF.text
             newTeamDetail.email = emailTF.text
             newTeamDetail.phone = phoneTF.text
@@ -94,18 +105,24 @@ class DetailsViewController: UIViewController {
             
         }
         
-        //4 Attributes are assigned the values
-        manObjContext.save(nil)
-        println ("A new object was created.")
-        // println ("A new object was created - - - \(featuredProjectItem.description)")
+        do {
+            //4 Attributes are assigned the values
+            try manObjContext.save()
+        } catch _ {
+        }
+        print ("A new object was created.")
+        do {
+            // println ("A new object was created - - - \(featuredProjectItem.description)")
     
-        
-        //5 Save the changes to storage
-        manObjContext.save(nil)
+            
+            //5 Save the changes to storage
+            try manObjContext.save()
+        } catch _ {
+        }
         
         //6
         //self.navigationController?.popToRootViewControllerAnimated(true)
-        self.navigationController?.popToViewController(navigationController!.viewControllers[1] as! UIViewController, animated: true)
+        self.navigationController?.popToViewController(navigationController!.viewControllers[1] , animated: true)
     
     }
         

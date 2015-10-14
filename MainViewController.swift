@@ -20,7 +20,7 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     
     @IBOutlet weak var zipcodeTF: UITextField! = nil
-
+/*
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     
@@ -34,10 +34,10 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                 placeMarksInfoLabel.hidden = true
             }
         }
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
-      mapView.delegate = self
+     /* mapView.delegate = self
       zipcodeTF.delegate = self
         
         //5 Location is set here
@@ -49,7 +49,7 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         //Location Manager p158
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
+        //locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
 
@@ -71,26 +71,26 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     //12 info when hit (i) button
     func stringifyLocationInfo(placemark:CLPlacemark) {
         locationManager.stopUpdatingLocation()
-        placeMarksString = "City: \(placemark.locality)\n" + "Zip: \(placemark.postalCode)\n" + "Country: \(placemark.country)\n" + "(\(placemark.location.coordinate.latitude), \(placemark.location.coordinate.longitude))"
+        placeMarksString = "City: \(placemark.locality)\n" + "Zip: \(placemark.postalCode)\n" + "Country: \(placemark.country)\n" + "(\(placemark.location!.coordinate.latitude), \(placemark.location!.coordinate.longitude))"
     }
     
     
     //did update locations
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: { (placemarksArray, error) -> Void in
+  /*   func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: { (placemarksArray, error) -> Void in
             
             if(error != nil) {
-                println("Error:" + error.description)
+                print("Error:" + error!.description)
                 return
             }
             
             //11
-            if(placemarksArray.count > 0) {
+           if(placemarksArray!.count > 0) {
                 let placeMark = placemarksArray[0] as! CLPlacemark
                 self.stringifyLocationInfo(placeMark)
             }
             else {
-                println("Error with placemark data")
+                print("Error with placemark data")
             }
             let ourLocation = CLLocationCoordinate2DMake(manager.location.coordinate.latitude, manager.location.coordinate.longitude)
             let mapSpan = MKCoordinateSpan(latitudeDelta: 0.55, longitudeDelta: 0.55)
@@ -98,21 +98,22 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
             self.mapView.setRegion(mapRegion, animated: true)
             
         })
-    }
-    
+    }*/
+    */
     func textFieldShouldEndEditing(zipcodeTF: UITextField) -> Bool {
         //println("TextField should end editing method called")
-        locationManager.startUpdatingLocation()
-        mapView.showsUserLocation = true
+        //locationManager.startUpdatingLocation()
+        //mapView.showsUserLocation = true
         return true;
     }
+
     func textFieldShouldReturn(zipcodeTF: UITextField) -> Bool
         // called when 'return' key pressed. return NO to ignore.
         {
         zipcodeTF.resignFirstResponder()
             return true;
+        }
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
