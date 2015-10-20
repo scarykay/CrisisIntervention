@@ -3,42 +3,84 @@
 import UIKit
 import CoreData
 
-enum EncryptionError: ErrorType {
-    case Empty
-    case Short
-}
 
 class MasterTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, TeamDetailDelegate {
 
     var teamDetailsArray:Array<AnyObject> = []
     
     var coreDataStack: CoreDataStack!
-    //lazy var fetchedResultController: NSFetchedResultsController =
-    //self.surfJournalfetchedResultController()
+    lazy var fetchedResultController: NSFetchedResultsController = self.surfJournalfetchedResultController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
         // page123
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
-        
     }
     
     
+    //SURF
+    // MARK: - NSFetchedResultsController
+    
+    func surfJournalfetchedResultController() -> NSFetchedResultsController {
+            
+            fetchedResultController =  NSFetchedResultsController(
+                    fetchRequest: surfJournalFetchRequest(),
+                    managedObjectContext: coreDataStack.context,
+                    sectionNameKeyPath: nil,
+                    cacheName: nil)
+            fetchedResultController.delegate = self
+            
+           /* var error: NSError? = nil
+            if (!fetchedResultController.performFetch(&error)){
+                println("Error: \(error?.localizedDescription)")
+                abort()
+            }*/
+            
+            return fetchedResultController
+    }
+    
+    func surfJournalFetchRequest() -> NSFetchRequest {
+        
+        let fetchRequest = NSFetchRequest(entityName: "TeamDetail")
+        fetchRequest.fetchBatchSize = 20
+        
+        let sortDescriptor =
+        NSSortDescriptor(key: "city", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        return fetchRequest
+    }
+    
+    
+    // MARK: - NSFetchedResultsControllerDelegate
+    
+    func controllerDidChangeContent(controller:
+        NSFetchedResultsController) {
+            tableView.reloadData()
+    }
+
+    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         let theAppDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         //p120
         let manObjContext:NSManagedObjectContext = theAppDelegate.managedObjectContext!
         let fetchRequest = NSFetchRequest(entityName: "TeamDetail")
-        do {
+            do {
             try teamDetailsArray = manObjContext.executeFetchRequest(fetchRequest)
-        } catch {
+            } catch {
             // Do something in response to error condition
-        }
+                print("oh no")
+            }
+        
+        //3.5 filter or predicate
+       // let searchFilter = NSPredicate(format:"price > 20.00")
+       // fetchRequest.predicate = searchFilter 
+        //[NSPredicateWithFormat:@"SELF matches[c] '\\\\d{5}'"];
+        
         
         self.tableView.reloadData()
     }
@@ -48,9 +90,7 @@ class MasterTableViewController: UITableViewController, NSFetchedResultsControll
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    // MARK: - Table view data source
+    // MARK: - UITableViewDataSource = MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
@@ -111,9 +151,10 @@ class MasterTableViewController: UITableViewController, NSFetchedResultsControll
             if !manObjContext.save(&error) {
                 abort()
             }
-            else if editingStyle == .Insert {
+            else*/ if editingStyle == .Insert {
                 // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-            } */
+                print("hello mk")
+            }
         }
     }
     

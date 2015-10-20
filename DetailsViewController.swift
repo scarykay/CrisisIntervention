@@ -11,10 +11,8 @@ import UIKit
 import CoreData
 
 protocol TeamDetailDelegate {
-    
     func didFinishViewController(
         viewController:DetailsViewController, didSave:Bool)
-    
 }
 
 
@@ -23,15 +21,10 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var cityTF: UITextField!
     @IBOutlet weak var stateTF: UITextField!
     @IBOutlet weak var zipcodeTF: UITextField!
-    
     @IBOutlet weak var coordinatorTF: UITextField!
-    
     @IBOutlet weak var emailTF: UITextField!
-    
     @IBOutlet weak var phoneTF: UITextField!
-    
-    @IBOutlet weak var nameTF: UITextField! //dispatch
-    
+    @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var facilityTF: UITextField!
     
     /*var journalEntry: TeamDetail! {
@@ -42,9 +35,6 @@ class DetailsViewController: UIViewController {
     
     var context: NSManagedObjectContext!
     var delegate:TeamDetailDelegate?
-    
-    
-    
     var featuredItem:TeamDetail?
     
     override func viewDidLoad() {
