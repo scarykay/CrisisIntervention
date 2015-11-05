@@ -1,4 +1,4 @@
-//  MasterTableViewController.swift
+ //  MasterTableViewController.swift
 
 import UIKit
 import CoreData
@@ -114,9 +114,11 @@ class MasterTableViewController: UITableViewController, NSFetchedResultsControll
         cell.textLabel?.textColor = UIColor.blueColor()
         cell.textLabel?.font = UIFont(name: "Futura", size: 20)
         
-        cell.detailTextLabel?.text = "\(currentTeamDetail.state), \(currentTeamDetail.zipcode), \(currentTeamDetail.coordinator) \(currentTeamDetail.phone), \(currentTeamDetail.email), \(currentTeamDetail.name), \(currentTeamDetail.facility)"
-        cell.detailTextLabel?.textColor = UIColor.blueColor()
-        cell.detailTextLabel?.font = UIFont(name: "Arial", size:12)
+        cell.detailTextLabel?.text = currentTeamDetail.zipcode
+        //, \(currentTeamDetail.zipcode), \(currentTeamDetail.coordinator) \(currentTeamDetail.phone), \(currentTeamDetail.email), \(currentTeamDetail.name), \(currentTeamDetail.facility)"
+        cell.detailTextLabel?.textColor = UIColor.blackColor()
+        cell.detailTextLabel?.font = UIFont(name: "Arial", size:20)
+                
         return cell
     }
     
@@ -201,18 +203,38 @@ class MasterTableViewController: UITableViewController, NSFetchedResultsControll
     /*In a storyboard-based application, you will often want to do a little preparation before navigation
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "detailsSegue" {
-            //let indexPath = self.tableView.indexPathForSelectedRow!
+        
+        
+        /*if segue.identifier == "detailsSegue" {
+        let indexPath =self.tableView.indexPathForSelectedRow!
             _ = self.tableView.indexPathForSelectedRow!.row
             _ = segue.destinationViewController as! UINavigationController
-            
+            */
+        
             //let detailViewController = navigationController.topViewController as! MasterTableViewController
             //let surfJournalEntry = fetchedResultController.objectAtIndexPath(indexPath!) as! TeamDetail
+            /*//pg121*/
+            if (segue.identifier == "detailsssSegue"){
+               // // grab the current teamDetail object from the array
+                //let currentTeamDetail = teamDetailsArray as! TeamDetail
+                //var infoPocket:MKMapViewController =
+               // _ = self.indexPathForSelectedRow!.row
+               // segue.destinationViewController as! MapViewController
+                
+               // infoPocket.currentZip.text = currentTeamDetail.zipcode
+                
+                
+               // _ = self.tableView.indexPathForSelectedRow!.row
+                print("hi")
+                //let selectedTeamDetail = teamDetailsArray[selectedItemIndexPath!] as! TeamDetail
+                //_ = segue.destinationViewController as! UIViewController
+                //detailsScreen.featuredItem = selectedTeamDetail
             
-            
+
+        
             // 1
-            let childContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-            childContext.parentContext = coreDataStack.context
+            //let childContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+            //childContext.parentContext = coreDataStack.context
             
             // 2
             //let childEntry = childContext.objectWithID( surfJournalEntry.objectID) as! TeamDetail
@@ -238,13 +260,5 @@ class MasterTableViewController: UITableViewController, NSFetchedResultsControll
 
                     
         
-        /*//pg121*/
-        if (segue.identifier == "detailsSegue"){
-            _ = self.tableView.indexPathForSelectedRow!.row
-            print("hi")
-            //let selectedTeamDetail = teamDetailsArray[selectedItemIndexPath!] as! TeamDetail
-            _ = segue.destinationViewController as! DetailsViewController
-            //detailsScreen.featuredItem = selectedTeamDetail
-        }
     }
 }

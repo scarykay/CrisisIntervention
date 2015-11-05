@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6nj-qF-xao">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6nj-qF-xao">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--Crisis Intervention Teams-->
@@ -43,7 +43,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="VPX-tZ-c7s" kind="presentation" id="S6Y-jz-2PB"/>
+                                    <segue destination="aea-1e-l7P" kind="show" identifier="detailsssSegue" id="S6Y-jz-2PB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -66,13 +66,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oza-5O-fxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1076.5" y="361.5"/>
+            <point key="canvasLocation" x="-593.5" y="1469.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0jl-KV-00u">
             <objects>
                 <navigationController id="6nj-qF-xao" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="icon_google_locator_60" systemItem="search" id="JEg-ES-WRA"/>
+                    <tabBarItem key="tabBarItem" selectedImage="D5FD4043-6613-4046-967D-E91F7A802C78" systemItem="search" id="JEg-ES-WRA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="X4w-2D-3WJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -85,7 +85,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ix0-Ha-qbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1962.5" y="361.5"/>
+            <point key="canvasLocation" x="-1604.5" y="1469.5"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="vfl-mF-JJw">
@@ -99,14 +99,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SZl-3h-4vN">
-                                <rect key="frame" x="123" y="248" width="129" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="enter zipcode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPJ-dg-w4d">
-                                <rect key="frame" x="60" y="210" width="255" height="35"/>
+                                <rect key="frame" x="73" y="228" width="255" height="35"/>
                                 <animations/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -117,16 +111,17 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="136"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jtd-XG-Gce" userLabel="Find my CIT info">
-                                <rect key="frame" x="57" y="326" width="261" height="70"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="xMd-z3-90C">
+                                <rect key="frame" x="122" y="278" width="156" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Show my CIT INFO">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <action selector="findCIT:" destination="akj-02-uz9" eventType="editingDidEnd" id="vri-kJ-1E3"/>
+                                    <action selector="saveMyZip:" destination="akj-02-uz9" eventType="editingDidEnd" id="ym1-bY-s3h"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,19 +134,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="4pb-kk-SUa" id="yVb-sl-M1O"/>
-                        <outlet property="zipcodeTF" destination="SZl-3h-4vN" id="OGf-3t-sl4"/>
+                        <outlet property="zipcodeTF" destination="xMd-z3-90C" id="Z8R-un-UfO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyN-OZ-6GE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1527.5" y="361.5"/>
+            <point key="canvasLocation" x="-1144.5" y="1469.5"/>
         </scene>
-        <!--View Controller-->
+        <!--MapViewController-->
         <scene sceneID="iRe-RX-xhk">
             <objects>
-                <viewController id="VPX-tZ-c7s" sceneMemberID="viewController">
+                <viewController title="MK Map View Controller" id="VPX-tZ-c7s" userLabel="MapViewController" customClass="MapViewController" customModule="CrisisIntervention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OdP-oy-kVO"/>
                         <viewControllerLayoutGuide type="bottom" id="89u-3M-TIW"/>
@@ -160,49 +156,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CcP-Me-pCh">
-                                <rect key="frame" x="47" y="33" width="137" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="show info here" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORA-dH-6WW">
-                                <rect key="frame" x="20" y="272" width="452" height="257"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="infoPocketLabel" text="show info here" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORA-dH-6WW" userLabel="infoPocketLabel" customClass="infoPocketLabel">
+                                <rect key="frame" x="33" y="265" width="202" height="257"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4pb-kk-SUa">
-                                <rect key="frame" x="33" y="85" width="309" height="142"/>
+                                <rect key="frame" x="33" y="93" width="309" height="142"/>
                                 <animations/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woA-eU-h7Q">
-                                <rect key="frame" x="320" y="249" width="22" height="22"/>
-                                <animations/>
-                                <state key="normal">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="showPlacemarks:" destination="akj-02-uz9" eventType="touchUpInside" id="2oS-d9-C3R"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MfB-1b-te0"/>
+                    <navigationItem key="navigationItem" title="Map" id="Ny6-5z-kRk" userLabel="Map">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wAL-Pw-Col">
+                            <connections>
+                                <segue destination="WMu-rF-yKh" kind="show" identifier="BacktoTable" id="BSD-Hl-77K"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Home" id="Uro-Te-WYB">
+                            <connections>
+                                <segue destination="akj-02-uz9" kind="show" identifier="HomeButton" id="2FT-EA-3D2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="infoPocketLabel" destination="ORA-dH-6WW" id="OAM-UK-roW"/>
+                        <outlet property="mapView" destination="4pb-kk-SUa" id="wim-fi-oRy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8b-g4-Z5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540.5" y="779.5"/>
+            <point key="canvasLocation" x="-830.5" y="626.5"/>
         </scene>
-        <!--manage CIT info-->
+        <!--manage Details-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="DetailsViewController" customModule="CrisisIntervention" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" userLabel="manage Details" customClass="DetailsViewController" customModule="CrisisIntervention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SzS-do-1x0"/>
                         <viewControllerLayoutGuide type="bottom" id="DwW-XS-bxf"/>
@@ -319,7 +312,7 @@
                         <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="manage CIT info" id="oGp-cn-BcP">
+                    <navigationItem key="navigationItem" title="Manage Details" id="oGp-cn-BcP">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8WV-GR-7pY">
                             <connections>
                                 <action selector="cancel:" destination="vXZ-lx-hvc" id="iNr-m0-UEG"/>
@@ -344,12 +337,344 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540.5" y="48.5"/>
+            <point key="canvasLocation" x="84" y="1461"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jti-4U-tKs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aea-1e-l7P" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HyQ-OZ-4OB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VPX-tZ-c7s" kind="relationship" relationship="rootViewController" id="8si-cs-RMi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EXM-M4-rYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1517.5" y="445.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="D5FD4043-6613-4046-967D-E91F7A802C78" width="60" height="60">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
+GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
+DBIAwAAAgAKACtISCRMVWk5TLm9iamVjdHOhFIADgAnSEgkXGqIYGYAEgAWACBAA0h0JHh9fEBROU1RJ
+RkZSZXByZXNlbnRhdGlvboAGgAdPEUVOTU0AKgAAOEj///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wABAGYAAABmAAAAZgAAAGYAAQBmAAAAZgABAGYA
+AQBmAAEAZgABAGYAAABmAAIAZgABAGYAAQBmAAEAZgABAGYAAABmAAEAZQABAGYAAQBmAAEAZgABAGYA
+AgBmAAEAZgABAGYAAABlAAEAZgABAGUAAABmAAEAZgABAGYAAQBnAAEAZgAAAGYAAABmAAEAZgABAGYA
+AQBmAAEAZQABAGYAAQBmAAEAZgAAAGYAAQBmAAAAZgABAGYAAQBmAAEAZgAAAGYAAQBmAAEAZgAAAGYA
+AQBmAAEAZgABAGYAAABmAAEAZj////8A////AP///wABAGYAAABmAAEAZgABAGYAAABmAAAAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAABmAAEAZgABAGYAAQBmAAIAZgABAGYA
+AQBmAAEAZgABAGYAAABmAAAAZgABAGYAAQBmAAEAZgAAAGYAAQBnAAEAZgAAAGYAAABmAAEAZgABAGYA
+AQBmAAIAZgAAAGUAAABmAAAAZgAAAGYAAQBmAAEAZgABAGYAAgBmAAEAZgAAAGYAAQBmAAIAZgAAAGUA
+AQBlAAEAZgACAGY1AgBmogEAZvf///8A////AP///wABAGYAAQBmAAEAZgAAAGUAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAABmAAEAZgABAGYAAQBmAAEAZgAAAGYAAQBmAAEAZgABAGYAAQBlAAIAZgAAAGYA
+AQBmAAEAZQABAGYAAQBmAAEAZgABAGYAAABmAAAAZgABAGYAAQBnAAEAZgABAGYAAABmAAEAZgABAGYA
+AgBmAAEAZgABAGYAAABlAAEAZgAAAGUAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZQAAAGYA
+AQBmMAIAZqoBAGb4AQBm/wEAZqT///8A////AP///wAAAGYAAQBmAAEAZgAAAGYAAABmAAAAZgABAGYA
+AQBmAAEAZgABAGYAAABlAAEAZgABAGYAAQBmAAEAZgAAAGYAAABmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGUAAABlAAEAZgABAGUAAABmAAAAZgABAGYAAQBnAAEAZgAAAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAAAZgAAAGUAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZjgAAGam
+AQBm+gEAZv8CAGb/AQBm+wEAZif///8A////AP///wABAGYAAQBmAAEAZgAAAGYAAABmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAABmAAEAZQABAGYAAQBmAAEAZgAAAGYAAABmAAEAZgABAGUAAQBmAAEAZQABAGYA
+AgBmAAEAZgACAGYAAQBmAAAAZgABAGYAAABmAAEAZgAAAGYAAQBnAAEAZgABAGYAAABmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBlAAIAZgAAAGY5AQBmpAEAZv4BAGb/
+AQBm/wEAZv8BAGb/AABlnQEAZgD///8A////AP///wAAAGYAAQBmAAEAZgAAAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZQABAGYAAABmAAEAZgABAGYAAgBmAAEAZgAAAGYAAABlAAEAZgABAGYAAQBmAAEAZgAAAGYA
+AQBmAAEAZgABAGYAAABmAAAAZgACAGYAAQBmAAEAZgABAGYAAgBnAAEAZgAAAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgAAAGYAAABmAAEAZgABAGYAAABmAAAAZQABAGUAAQBmMwEAZa0BAGb6AABm/wEAZv8BAGb/
+AQBm/wEAZv8BAGb3AQBmLAAAZgD///8A////AP///wABAGYAAABmAAEAZgAAAGYAAABmAAEAZgACAGYA
+AABmAAEAZgABAGUAAABlAAEAZgABAGYAAgBmAAEAZgABAGYAAQBmAAIAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZQABAGYAAABmAAAAZgABAGYAAQBmAAAAZgABAGYAAQBnAAEAZgAAAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgAAAGYAAABmAAAAZgABAGYAAABmAAEAZjoBAGarAQBm+wEAZv8BAGb/AABm/wAAZv8AAGX/
+AQBm/wEAZv8BAGagAABmAAAAZgD///8A////AP///wABAGYAAABmAAEAZgABAGYAAABlAAAAZQABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAgBmAAEAZQAAAGYAAABmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAABlAAAAZgABAGYAAQBmAAAAZQABAGYAAgBnAAEAZgAAAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZQAAAGYAAABmAAEAZgABAGY7AQBmpwEAZv8BAGb/AgBm/wEAZv8BAGb/AABm/wEAZv8AAGb/
+AQBm/wEAZvYBAGYqAQBmAAIAZgD///8A////AP///wAAAGYAAQBmAAAAZgABAGYAAABmAAAAZgABAGYA
+AQBmAAEAZgABAGYAAABmAAEAZgABAGYAAQBmAAEAZgAAAGYAAABmAAEAZgABAGUAAQBmAAEAZgAAAGYA
+AQBmAAEAZgABAGYAAQBmAAAAZgABAGUAAQBmAAEAZgABAGYAAQBnAAEAZgAAAGYAAABmAAEAZgABAGYA
+AQBmAAIAZgAAAGYAAQBmMQIAZqgBAGb6AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AgBm/wAAZf8BAGb/
+AQBm/wAAZqIAAGUAAQBmAAAAZgD///8A////AP///wAAAGYAAABmAAAAZgAAAGYAAABmAAEAZgABAGYA
+AABmAAEAZgACAGYAAABmAAEAZQABAGYAAQBmAAEAZgABAGYAAQBmAAEAZQABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAAAZgABAGYAAQBmAAAAZgABAGYAAQBnAAEAZgABAGYAAQBmAAIAZgACAGYA
+AQBmAAEAZTYAAGanAABm+gEAZv8CAGb/AQBm/wEAZf8BAGb/AQBm/wEAZv8BAGb/AQBl/wEAZv8BAGb/
+AQBm+wAAZSgAAGYAAABlAAAAZgD///8A////AP///wAAAGYAAABmAAAAZgABAGYAAQBmAAAAZgABAGYA
+AQBmAAIAZgABAGYAAQBmAAEAZgABAGYAAgBmAAEAZgABAGYAAABlAAEAZgABAGYAAgBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAABmAAAAZgACAGYAAQBmAAEAZgABAGYAAQBnAAEAZgAAAGYAAQBmAAEAZgACAGY5
+AQBmpAEAZv0AAGb/AABm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGX/AQBm/wEAZv8BAGb/
+AQBmngAAZgAAAGYAAABmAAEAZgD///8A////AP///wAAAGYAAQBmAAEAZgABAGYAAABmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAABmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAIAZgABAGUAAQBmAAEAZgAAAGYA
+AQBmAAEAZQABAGUAAQBmAAAAZgABAGYAAQBmAAEAZgAAAGYAAQBnAAEAZgABAGYAAQBmNAEAZqsBAGb7
+AQBm/wEAZv8BAGb/AABm/wEAZv8BAGb/AQBm/wEAZv8BAGX/AQBm/wEAZv8BAGb/AABm/wIAZv8BAGb4
+AQBmLAEAZgABAGYAAgBmAAEAZgD///8A////AP///wABAGYAAABmAAAAZgAAAGYAAABmAAAAZgABAGYA
+AABmAAIAZgABAGYAAQBmAAIAZgABAGYAAQBmAAEAZgABAGYAAQBmAAIAZgABAGYAAQBmAAEAZgAAAGYA
+AQBlAAEAZgABAGYAAABmAAEAZgABAGYAAABmAAEAZgABAGYAAgBnAAIAZjgBAGasAQBm+wEAZv8AAGb/
+AABm/wEAZv8CAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGag
+AQBmAAEAZgABAGYAAQBlAAEAZgD///8A////AP///wAAAGYAAABlAAAAZgAAAGUAAQBmAAEAZgACAGYA
+AABlAAEAZgABAGYAAABmAAEAZgABAGYAAQBmAAEAZgAAAGYAAQBmAAEAZgABAGYAAQBmAAIAZgABAGYA
+AQBmAAEAZgABAGYAAABmAAAAZgABAGYAAQBmAAEAZgABAGY9AQBlqAEAZv4BAGb/AABm/wAAZv8AAGX/
+AABm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8AAGb/AQBm/wEAZv8BAGb/AQBm/wEAZvYBAGYq
+AQBmAAEAZQABAGYAAQBmAAEAZgD///8A////AP///wAAAGYAAABlAAEAZgAAAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAABmAAEAZgABAGYAAgBmAAEAZgABAGYAAQBmAAIAZgABAGYAAQBmAAIAZgABAGYA
+AQBmAAEAZgABAGYAAABmAAAAZgABAGUAAABmRwEAZq4BAGX9AQBm/wEAZv8BAGb/AQBl/wAAZf8AAGb/
+AQBm/wEAZv8BAGb/AQBm/wEAZv8AAGb/AQBm/wEAZv8BAGb/AQBm/wAAZv8AAGb/AQBm/wAAZp0BAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wABAGYAAQBmAAEAZgABAGYAAQBmAAAAZgABAGYA
+AABlAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgAAAGYAAQBmAAEAZgABAGYAAQBmAAEAZgAAAGUA
+AQBmAAEAZgABAGYAAQBmAAAAZkUBAGW1AQBm/wEAZv8BAGb/AQBm/wEAZv8AAGb/AQBm/wAAZv8BAGb/
+AgBm/wEAZv8BAGb/AQBm/wEAZf8CAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8AAGb/AABm+AAAZiIBAGYA
+AQBmAAEAZgABAGYAAABmAAAAZgD///8A////AP///wAAAGYAAQBmAAEAZgAAAGUAAQBmAAEAZgABAGYA
+AABmAAEAZgABAGYAAABmAAIAZgABAGYAAQBmAAEAZgAAAGYAAQBmAAEAZgABAGUAAQBmAAEAZgAAAGYA
+AQBmAAEAZgABAGVBAQBmtwEAZv8BAGb/AQBm/wAAZv8BAGb/AQBm/wEAZv8AAGb/AQBm/wAAZf8BAGb/
+AgBm/wAAZv8BAGb/AQBm/wEAZv8AAGX/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AABmlgAAZgABAGYA
+AQBmAAEAZgAAAGYAAABmAAAAZgD///8A////AP///wABAGYAAABmAAAAZQABAGYAAABmAAAAZgABAGYA
+AQBmAAIAZgABAGYAAABmAAEAZgABAGYAAQBmAAIAZgAAAGYAAQBmAAEAZgABAGYAAQBmAAIAZgAAAGUA
+AABmRAEAZrkBAGb/AgBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AgBm/wIAZv8BAGb/AQBm/wEAZv8BAGb/
+AABm/wEAZv8BAGb/AgBm/wEAZf8BAGb/AABm/wAAZf8CAGb/AQBm/wEAZv8BAGX0AQBmJwEAZgAAAGYA
+AABmAAEAZgABAGYAAABmAAEAZgD///8A////AP///wABAGYAAABmAAEAZgABAGYAAABmAAEAZgABAGYA
+AABmAAIAZgABAGYAAABmAAEAZgABAGUAAQBmAAEAZgABAGYAAABmAAEAZgABAGYAAQBmAAEAZkkAAGa1
+AQBm/wEAZv8BAGb/AQBm/wAAZv8BAGb/AQBm/wEAZv8CAGb/AgBm/wEAZf8BAGb/AQBm/wEAZv8BAGb/
+AQBm/wEAZv8BAGb/AQBm/wIAZv8BAGb/AABm/wEAZv8AAGb/AQBl/wEAZv8BAGaZAQBmAAEAZQACAGYA
+AQBmAAEAZgABAGUAAQBmAAEAZgD///8A////AP///wABAGYAAQBmAAEAZgAAAGYAAQBmAAEAZgABAGYA
+AABmAAEAZgABAGYAAQBmAAEAZQABAGUAAQBmAAEAZgAAAGYAAQBmAAEAZgABAGZFAQBmuwEAZf8AAGb/
+AQBm/wEAZf8CAGb/AgBm/wEAZv8CAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AABm/wEAZv8BAGb/
+AQBm/wEAZv8BAGb/AQBm/wEAZv8AAGb/AQBm/wEAZv8BAGb/AQBm/wEAZvMBAGYkAQBmAAEAZgABAGYA
+AgBmAAEAZQABAGYAAQBmAAEAZgD///8A////AP///wAAAGYAAABmAAAAZgABAGYAAABlAAEAZgABAGYA
+AABmAAEAZgABAGUAAQBmAAEAZgABAGYAAQBlAAEAZgAAAGYAAQBmSAIAZr0BAGb/AQBl/wEAZv8BAGb/
+AQBm/wEAZv8BAGb/AgBm/wEAZv8BAGX/AQBm/wEAZv8BAGb/AQBl/wEAZv8AAGb/AQBm/wIAZv8BAGb/
+AABl/wEAZf8BAGb/AQBm/wEAZv8BAGb/AgBm/wEAZv8AAGb/AABm/wEAZpsBAGYAAQBmAAEAZgABAGUA
+AQBmAAEAZgABAGYAAgBmAAEAZgD///8A////AP///wAAAGYAAABmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgACAGYAAABmAAEAZgABAGYAAgBmAAIAZkwBAGa4AQBm/wEAZv8AAGb/AQBm/wIAZv8BAGb/
+AQBl/wEAZv8BAGb/AABm/wEAZv8AAGb/AQBl/wEAZv8BAGb/AABm/wEAZv8BAGb/AQBm/wAAZv8CAGb/
+AQBm/wAAZv8BAGb/AABm/wAAZv8BAGb/AQBm/wAAZv8BAGb/AQBm+AEAZiIBAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGUAAQBmAAEAZgD///8A////AP///wAAAGYAAABmAAEAZgAAAGYAAQBmAAAAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGZEAQBmvQEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/
+AQBm/wEAZv8BAGX/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wIAZv8BAGb/AQBm/wEAZv8BAGb/
+AQBm/wAAZv8BAGb/AQBl/wAAZv8BAGb/AQBm/wAAZv8AAGX/AgBmlgEAZQABAGYAAQBmAAEAZgABAGUA
+AQBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wAAAGYAAQBmAAEAZgAAAGYAAABlAAAAZgABAGYA
+AABmAAEAZgABAGYAAABmQwEAZroBAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AQBl/wEAZv8BAGb/
+AABm/wEAZv8CAGb/AABl/wEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wIAZv8AAGb/AQBm/wEAZv8BAGb/
+AQBm/wEAZv8BAGb/AABm/wEAZv8CAGb/AABm/wEAZv8BAGb1AQBnKAAAZwABAGcAAQBnAAEAZwAAAGcA
+AQBnAAAAZwAAAGcAAABnAAAAZwD///8A////AP///wAAAGYAAABmAAAAZgAAAGUAAABmAAEAZgABAGYA
+AABmAAEAZkoBAGa1AQBm/wAAZv8BAGb/AQBm/wAAZv8AAGb/AQBm/wEAZv8BAGX/AQBm/wEAZv8BAGb/
+AABm/wEAZv8BAGb/AABm/wEAZv8BAGb/AABm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8AAGX/
+AQBm/wEAZf8BAGb/AABm/wEAZv8AAGb/AQBm/wIAZv8BAGaaAQBmAAEAZgABAGYAAgBmAAEAZQABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wAAAGYAAQBmAAEAZgABAGYAAABmAAEAZgABAGVG
+AQBmugEAZv8BAGX/AQBm/wEAZv8AAGb/AABm/wAAZv8AAGb/AQBl/wEAZv8BAGb/AQBm/wEAZv8BAGb/
+AQBm/wIAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGX/AABm/wEAZv8AAGb/AQBm/wIAZv8BAGX/
+AgBm/wEAZv8BAGb/AQBm/wAAZv8BAGb/AQBm/wIAZvMBAGYlAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAgBmAAEAZgD///8A////AP///wABAGYAAABmAAAAZgAAAGYAAQBmRwEAZr4CAGb/
+AABm/wEAZv8AAGb/AQBm/wEAZv8AAGb/AQBm/wEAZv8BAGb/AQBm/wAAZv8AAGb/AQBl/wEAZv8BAGb/
+AQBm/wIAZv8BAGb/AQBm/wEAZf8AAGb/AABm/wEAZv8BAGb/AABm/wEAZv8AAGb/AQBm/wAAZv8BAGb/
+AgBm/wAAZf8AAGX/AQBm/wEAZv8BAGb/AQBm/wIAZpwBAGUAAQBmAAIAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wAAAGYAAABmAAAAZk4BAGa5AQBm/wEAZv8AAGb/
+AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AgBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AABm/wEAZv8BAGX/
+AQBm/wEAZv8BAGb/AQBm/wEAZv8AAGX/AgBm/wEAZv8BAGb/AABm/wEAZv8BAGb/AQBm/wAAZv8BAGb/
+AQBm/wAAZv8AAGb/AgBm/wEAZv8BAGb/AQBm+QAAZiIAAGYAAABmAAAAZgAAAGUAAQBmAAEAZgAAAGYA
+AABmAAEAZgAAAGYAAQBmAAAAZgD///8A////AP///wAAAGZYAQBmywEAZv8BAGb/AQBm/wEAZv8BAGb/
+AgBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wAAZv8CAGb/AQBm/wEAZf8BAGb/AABm/wEAZv8BAGb/
+AQBm/wIAZv8BAGb/AQBm/wEAZv8AAGb/AQBm/wAAZv8BAGb/AQBm/wEAZv8AAGb/AABm/wAAZv8BAGb/
+AABm/wEAZv8BAGb/AQBm/wAAZv8BAGb/AABmlwEAZwABAGcAAQBnAAEAZwABAGcAAgBnAAEAZwABAGcA
+AgBnAAEAZwABAGcAAQBmAAEAZwD///8A////AP///wAAAGalAABmrQEAZqMBAGaiAQBmogEAZqIAAGai
+AQBmogEAZqIBAGaiAQBmogEAZqIBAGaiAQBmogEAZqIBAGaiAQBmogEAZqIBAGWiAQBmogEAZaIBAGai
+AQBmogEAZqIBAGaiAQBmogEAZqIAAGarAQBm+gEAZv8BAGb/AQBl/wIAZv8BAGb/AQBm/wEAZf8BAGb/
+AQBm/wAAZv8BAGb/AQBm/wEAZv8BAGbxAQBmIwEAZgABAGYAAgBmAAEAZgACAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgACAGYAAQBmAAEAZgD///8A////AP///wABAGYAAABmAAAAZgABAGYAAQBmAAEAZgABAGYA
+AABmAAEAZQABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAABmAAEAZgABAGYAAABmAAAAZgACAGYA
+AQBmAAEAZgAAAGYAAQBlAAAAZgABAGYOAgBm8AEAZv8BAGb/AQBm/wEAZv8AAGb/AABm/wAAZf8BAGX/
+AQBm/wAAZv8BAGb/AQBm/wEAZv8AAGaSAABlAAAAZgAAAGYAAQBmAAEAZgABAGYAAQBmAAEAZgAAAGYA
+AQBmAAEAZgABAGYAAABmAAEAZgD///8A////AP///wAAAGYAAQBmAAEAZgACAGYAAQBmAAEAZgAAAGYA
+AABmAAEAZgABAGYAAQBlAAEAZgACAGYAAQBmAAEAZgAAAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGUA
+AQBmAAEAZgAAAGYAAQBmAAEAZgABAGYaAQBm8QEAZv8BAGb/AQBm/wIAZv8AAGb/AQBm/wEAZv8BAGb/
+AQBm/wEAZv8BAGb/AQBm/wEAZvsAAGYoAQBmAAAAZgABAGYAAQBmAAAAZgAAAGYAAQBmAAAAZgAAAGYA
+AQBmAAAAZgAAAGYAAQBmAAAAZgD///8A////AP///wAAAGUAAABmAAEAZgACAGYAAQBmAAEAZgAAAGYA
+AQBmAAEAZgABAGYAAQBmAAIAZgABAGYAAQBmAAEAZgAAAGUAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AABmAAAAZgAAAGYAAQBmAAEAZgAAAGYaAgBm8QAAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wEAZv8BAGb/
+AQBm/wAAZv8BAGb/AQBm/wIAZp8BAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAIAZgABAGYAAQBmAAEAZgD///8A////AP///wABAGYAAABmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAgBmAAEAZgAAAGYAAABmAAEAZgABAGYAAABmAAAAZgABAGYA
+AABmAAEAZgACAGYAAQBmAAEAZgABAGYaAQBm8QEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm/wEAZf8BAGb/
+AgBm/wEAZv8AAGb/AQBm+AEAZSwBAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAIAZgD///8A////AP///wAAAGYAAABlAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGUAAQBmAAAAZgAAAGUAAABmAAEAZgABAGYAAABmAAAAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYaAQBm8QEAZv8AAGb/AQBm/wAAZv8CAGb/AQBm/wAAZv8BAGb/
+AQBm/wAAZv8BAGb/AQBmoQEAZgAAAGUAAABmAAAAZgAAAGYAAQBmAAAAZgAAAGUAAQBmAAAAZQAAAGYA
+AQBmAAAAZgAAAGYAAQBmAAAAZgD///8A////AP///wAAAGYAAQBmAAEAZgABAGYAAQBmAAEAZgAAAGYA
+AABmAAEAZgABAGYAAQBmAAEAZgABAGYAAgBmAAEAZgABAGYAAQBmAAEAZgABAGYAAABmAAEAZgACAGYA
+AABmAAAAZgAAAGYAAQBmAAEAZgABAGYaAQBm8QEAZv8AAGb/AABl/wEAZv8BAGb/AQBm/wEAZv8BAGb/
+AQBm/wEAZv8BAGb1AABlLAAAZgABAGYAAABlAAAAZgABAGYAAABmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AABmAAEAZgAAAGYAAABmAAEAZgD///8A////AP///wAAAGYAAQBmAAAAZQACAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAgBmAAEAZgABAGYAAQBmAAEAZgAAAGYAAABmAAEAZgABAGYAAABmAAEAZgABAGYA
+AgBmAAEAZgABAGYAAQBmAAEAZgABAGYaAQBl8QEAZv8BAGb/AQBm/wAAZv8BAGb/AQBm/wEAZf8BAGb/
+AABm/wAAZv8BAGajAQBmAAAAZgABAGYAAABmAAEAZgAAAGYAAQBmAAAAZQABAGYAAABmAAEAZgAAAGYA
+AQBmAAAAZQAAAGYAAABmAAEAZgD///8A////AP///wABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAIAZgABAGYAAQBmAAEAZgABAGYAAQBmAAAAZgABAGYAAABmAAEAZgABAGYAAABmAAAAZQAAAGYA
+AABmAAEAZgABAGYAAABmAAEAZgAAAGYaAQBm8QEAZv8BAGb/AQBm/wEAZv8BAGb/AQBl/wAAZf8BAGb/
+AQBm/wEAZvsCAGYoAgBmAAEAZgABAGYAAQBmAAEAZgABAGYAAgBmAAIAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAIAZgABAGYAAQBmAAEAZgD///8A////AP///wABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AABmAAEAZgABAGYAAQBmAAIAZgABAGYAAQBmAAAAZgABAGYAAQBmAAIAZgABAGYAAABmAAAAZgABAGYA
+AABmAAAAZgAAAGYAAABmAAEAZgABAGYaAABl8QEAZv8BAGb/AQBm/wIAZv8BAGb/AQBm/wEAZv8AAGb/
+AQBm/wIAZp8BAGUAAQBmAAIAZgABAGYAAQBmAAEAZgABAGYAAQBlAAEAZgABAGYAAQBlAAEAZgABAGYA
+AgBmAAEAZgACAGYAAQBmAAEAZQD///8A////AP///wAAAGYAAABmAAAAZgABAGYAAQBmAAEAZgAAAGYA
+AQBmAAEAZgABAGYAAgBmAAEAZgABAGYAAQBmAAEAZgAAAGYAAABmAAEAZgABAGYAAABmAAAAZgAAAGYA
+AABmAAAAZgAAAGYAAABlAAEAZgAAAGYaAQBm8QIAZv8BAGb/AQBm/wAAZv8AAGb/AQBm/wEAZv8AAGb/
+AgBm+QEAZiwBAGYAAQBmAAEAZgACAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAIAZgD///8A////AP///wABAGYAAQBmAAAAZgABAGYAAQBmAAEAZQABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGUAAQBmAAAAZgABAGYAAQBmAAAAZgABAGYAAABlAAAAZgAAAGUA
+AABmAAEAZgABAGYAAABmAAAAZgAAAGYaAQBm8QAAZv8BAGX/AABm/wEAZv8BAGb/AABm/wEAZf8AAGb/
+AABloQEAZgAAAGYAAABmAAEAZgAAAGYAAABmAAAAZgABAGYAAQBmAAAAZgAAAGUAAABmAAAAZgABAGYA
+AABmAAEAZgAAAGYAAABlAAAAZgD///8A////AP///wABAGYAAABmAAEAZgABAGYAAQBlAAEAZgAAAGYA
+AABmAAEAZQABAGYAAQBlAAEAZgABAGYAAQBmAAEAZgAAAGYAAABmAAAAZgABAGYAAABmAAEAZgAAAGUA
+AQBmAAEAZgABAGYAAQBmAAEAZgAAAGYaAQBm8QEAZv8BAGb/AABm/wEAZf8BAGb/AABm/wEAZv8BAGb1
+AQBmLAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGUAAQBmAAIAZgACAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAIAZgD///8A////AP///wAAAGYAAABmAAEAZgABAGUAAQBmAAEAZgABAGYA
+AABmAAEAZQABAGYAAQBmAAEAZgABAGUAAQBmAAAAZgAAAGYAAABmAAEAZgAAAGYAAQBmAAEAZgABAGYA
+AABmAAEAZgAAAGYAAQBmAAAAZgAAAGYaAQBm8QEAZf8BAGX/AABm/wEAZv8BAGb/AQBm/wEAZv8BAGak
+AQBmAAAAZgAAAGYAAABmAAEAZgAAAGYAAQBmAAAAZgAAAGYAAABmAAAAZgABAGYAAQBmAAEAZgAAAGYA
+AABmAAAAZgAAAGYAAABmAAEAZgD///8A////AP///wAAAGYAAQBmAAAAZgABAGYAAQBmAAEAZgAAAGYA
+AQBmAAEAZgABAGYAAQBlAAEAZgABAGYAAQBmAAEAZgAAAGYAAABlAAAAZgAAAGYAAQBmAAAAZgAAAGYA
+AQBmAAAAZgAAAGYAAQBmAAEAZgABAGYaAABm8QEAZv8AAGb/AQBm/wEAZv8BAGb/AgBm/wEAZvsAAGYp
+AQBmAAAAZQABAGYAAABlAAEAZgAAAGYAAABmAAEAZgAAAGUAAABlAAEAZgABAGYAAQBmAAEAZgABAGYA
+AABlAAAAZgABAGYAAABmAAEAZgD///8A////AP///wAAAGUAAABmAAAAZgABAGYAAQBmAAEAZgAAAGUA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGUA
+AgBmAAEAZgABAGYAAQBmAAIAZgABAGYaAQBm8QEAZv8BAGb/AQBm/wAAZv8BAGb/AQBm/wEAZpgBAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZQABAGUAAgBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAgBmAAEAZgD///8A////AP///wAAAGYAAQBmAAAAZgABAGYAAgBmAAEAZgABAGYA
+AABmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBlAAEAZgABAGUAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYaAQBl8QEAZv8BAGb/AQBm/wEAZv8BAGb/AQBm9gEAZigBAGYA
+AABlAAEAZgAAAGYAAABmAAAAZQAAAGYAAQBmAAEAZgABAGYAAABmAAEAZgABAGYAAABmAAAAZgAAAGYA
+AABmAAAAZgABAGYAAABmAAEAZgD///8A////AP///wAAAGYAAABlAAAAZgABAGYAAQBmAAEAZgABAGYA
+AABmAAEAZgABAGYAAQBmAAAAZgABAGYAAQBmAAAAZgAAAGUAAABmAAEAZgAAAGUAAABlAAEAZgABAGYA
+AABmAAEAZgAAAGYAAQBmAAAAZgABAGYaAgBm8QAAZv8BAGb/AQBm/wEAZv8CAGb/AQBmmgEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgACAGYAAgBmAAIAZgABAGYAAQBmAAEAZgABAGYAAQBmAAIAZgABAGUA
+AgBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wABAGYAAQBmAAEAZgABAGUAAgBmAAIAZgAAAGYA
+AQBmAAEAZgABAGYAAQBmAAAAZQABAGYAAABlAAAAZgABAGYAAABmAAEAZgABAGYAAABmAAEAZgAAAGYA
+AABmAAAAZgAAAGYAAQBmAAEAZgAAAGUaAABm8QIAZv8BAGb/AQBm/wEAZv8AAGbzAQBmJgEAZgABAGYA
+AQBmAAEAZQABAGYAAQBmAAEAZgACAGYAAQBmAAEAZgABAGYAAgBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wABAGYAAABlAAAAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAgBmAAEAZgABAGYAAQBlAAIAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYaAQBm8QEAZv8CAGb/AQBm/wIAZv8AAGadAABlAAAAZgAAAGYA
+AQBmAAAAZgABAGYAAABmAAEAZgABAGYAAQBmAAAAZgABAGYAAABmAAEAZgABAGYAAQBmAAAAZgABAGYA
+AABmAAEAZgABAGYAAABmAAEAZgD///8A////AP///wABAGYAAQBmAAAAZQABAGYAAQBmAAEAZgAAAGYA
+AQBmAAEAZgAAAGYAAABmAAEAZgABAGYAAABmAAEAZgAAAGYAAQBmAAEAZgABAGYAAABmAAAAZgAAAGYA
+AQBmAAEAZgAAAGYAAABmAAAAZgAAAGYaAQBm8QEAZv8BAGb/AABm/wEAZvkBAGYjAABmAAEAZgAAAGUA
+AABmAAAAZgAAAGYAAABmAAEAZgAAAGYAAABmAAEAZgAAAGUAAABmAAAAZgABAGYAAABmAAAAZgAAAGYA
+AQBmAAEAZgAAAGYAAABmAAAAZgD///8A////AP///wABAGYAAABmAAAAZQABAGYAAQBmAAEAZgAAAGYA
+AQBmAAEAZgABAGYAAQBmAAIAZgABAGYAAQBmAAEAZgABAGUAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGUAAQBmAAIAZgABAGYaAgBm8QEAZv8AAGb/AgBm/wEAZpgBAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBlAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wAAAGUAAABlAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAIAZgABAGYAAQBmAAEAZgABAGYAAQBmAAIAZgABAGYAAgBmAAEAZgABAGYAAQBmAAIAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgACAGYaAQBm8QEAZv8BAGb/AQBm9gEAZSgBAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBlAAEAZgABAGYAAgBmAAEAZgABAGYAAQBmAAIAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZQD///8A////AP///wABAGYAAABmAAAAZQABAGYAAQBmAAAAZgAAAGYA
+AQBmAAAAZQAAAGUAAQBmAAEAZgAAAGUAAQBmAAAAZQABAGYAAQBmAAEAZgAAAGYAAABmAAEAZgAAAGYA
+AABmAAAAZgAAAGYAAQBmAAAAZgABAGYaAQBm8QIAZv8BAGb/AQBmmQEAZgABAGYAAABlAAAAZgABAGYA
+AABmAAEAZgAAAGYAAABmAAAAZgABAGYAAQBmAAAAZgAAAGYAAQBmAAAAZgABAGYAAABmAAEAZgAAAGYA
+AABmAAAAZgABAGYAAQBmAAAAZgD///8A////AP///wAAAGYAAABmAAAAZQABAGYAAABmAAEAZgAAAGYA
+AQBmAAEAZgABAGYAAABmAAAAZQABAGYAAABmAAAAZQABAGYAAABmAAAAZgAAAGYAAABmAAAAZgAAAGYA
+AQBmAAAAZgABAGYAAQBmAAAAZgABAGYaAQBm8QEAZf8BAGbzAQBmJgAAZgABAGYAAQBmAAAAZgABAGYA
+AABmAAAAZQABAGYAAABmAAAAZgAAAGYAAQBmAAEAZgAAAGYAAABlAAAAZgABAGYAAQBmAAAAZgABAGYA
+AABmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wAAAGYAAABmAAEAZgABAGYAAQBlAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAgBmAAEAZgACAGYAAQBmAAIAZgABAGUAAgBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYaAgBm8QEAZv8BAGadAQBlAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAIAZgABAGYAAQBmAAIAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wABAGYAAABmAAEAZgABAGYAAgBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgACAGYAAQBmAAEAZQABAGYAAQBmAAEAZgABAGYAAQBmAAIAZgACAGYA
+AQBmAAEAZgACAGYAAQBmAAEAZgABAGUaAQBm9AEAZvsBAGYjAQBmAAEAZgABAGYAAQBmAAEAZQABAGYA
+AQBmAAEAZgACAGYAAQBmAAIAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZQACAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wABAGYAAABmAAIAZgABAGYAAQBmAAEAZgABAGYA
+AgBmAAEAZgABAGYAAQBmAAIAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAIAZgABAGYA
+AQBmAAEAZQABAGYAAQBmAAEAZgABAGUaAQBm/wEAZp0CAGYAAQBlAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZQABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgACAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYAAQBlAAIAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgABAGYdAQBm7AEAZiwBAGYAAQBmAAEAZgABAGYAAQBmAAEAZgABAGYA
+AQBmAAIAZgABAGYAAQBmAAIAZgABAGYAAQBmAAEAZgABAGYAAQBmAAEAZQABAGYAAgBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZgD///8A////AP///wABAGYAAQBmAAEAZgABAGYAAQBmAAEAZQABAGYA
+AQBmAAEAZgABAGYAAgBmAAEAZgABAGYAAQBmAAEAZgACAGYAAQBlAAEAZQABAGYAAQBmAAEAZgABAGYA
+AQBmAAEAZgABAGYAAQBmAAEAZQABAGUpAQBmhwEAZgAAAGUAAABmAAAAZQAAAGYAAQBmAAAAZgAAAGYA
+AQBmAAAAZgAAAGYAAABmAAAAZgABAGYAAABmAAEAZgABAGYAAABmAAEAZgAAAGYAAABmAAEAZgAAAGYA
+AABmAAAAZgABAGYAAABmAAAAZgD///8A////AP///wAADgEAAAMAAAABADwAAAEBAAMAAAABADwAAAEC
+AAMAAAAEAAA49gEDAAMAAAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEV
+AAMAAAABAAQAAAEWAAMAAAABADwAAAEXAAQAAAABAAA4QAEcAAMAAAABAAEAAAFSAAMAAAABAAIAAAFT
+AAMAAAAEAAA4/odzAAcAAAxIAAA5BgAAAAAACAAIAAgACAABAAEAAQABAAAMSExpbm8CEAAAbW50clJH
+QiBYWVogB84AAgAJAAYAMQAAYWNzcE1TRlQAAAAASUVDIHNSR0IAAAAAAAAAAAAAAAAAAPbWAAEAAAAA
+0y1IUCAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARY3BydAAA
+AVAAAAAzZGVzYwAAAYQAAABsd3RwdAAAAfAAAAAUYmtwdAAAAgQAAAAUclhZWgAAAhgAAAAUZ1hZWgAA
+AiwAAAAUYlhZWgAAAkAAAAAUZG1uZAAAAlQAAABwZG1kZAAAAsQAAACIdnVlZAAAA0wAAACGdmlldwAA
+A9QAAAAkbHVtaQAAA/gAAAAUbWVhcwAABAwAAAAkdGVjaAAABDAAAAAMclRSQwAABDwAAAgMZ1RSQwAA
+BDwAAAgMYlRSQwAABDwAAAgMdGV4dAAAAABDb3B5cmlnaHQgKGMpIDE5OTggSGV3bGV0dC1QYWNrYXJk
+IENvbXBhbnkAAGRlc2MAAAAAAAAAEnNSR0IgSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAASc1JHQiBJRUM2
+MTk2Ni0yLjEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZ
+WiAAAAAAAADzUQABAAAAARbMWFlaIAAAAAAAAAAAAAAAAAAAAABYWVogAAAAAAAAb6IAADj1AAADkFhZ
+WiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9kZXNjAAAAAAAAABZJRUMgaHR0cDov
+L3d3dy5pZWMuY2gAAAAAAAAAAAAAABZJRUMgaHR0cDovL3d3dy5pZWMuY2gAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZGVzYwAAAAAAAAAuSUVDIDYxOTY2LTIuMSBEZWZh
+dWx0IFJHQiBjb2xvdXIgc3BhY2UgLSBzUkdCAAAAAAAAAAAAAAAuSUVDIDYxOTY2LTIuMSBEZWZhdWx0
+IFJHQiBjb2xvdXIgc3BhY2UgLSBzUkdCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGRlc2MAAAAAAAAALFJl
+ZmVyZW5jZSBWaWV3aW5nIENvbmRpdGlvbiBpbiBJRUM2MTk2Ni0yLjEAAAAAAAAAAAAAACxSZWZlcmVu
+Y2UgVmlld2luZyBDb25kaXRpb24gaW4gSUVDNjE5NjYtMi4xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAB2aWV3AAAAAAATpP4AFF8uABDPFAAD7cwABBMLAANcngAAAAFYWVogAAAAAABMCVYAUAAAAFcf521l
+YXMAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAKPAAAAAnNpZyAAAAAAQ1JUIGN1cnYAAAAAAAAEAAAA
+AAUACgAPABQAGQAeACMAKAAtADIANwA7AEAARQBKAE8AVABZAF4AYwBoAG0AcgB3AHwAgQCGAIsAkACV
+AJoAnwCkAKkArgCyALcAvADBAMYAywDQANUA2wDgAOUA6wDwAPYA+wEBAQcBDQETARkBHwElASsBMgE4
+AT4BRQFMAVIBWQFgAWcBbgF1AXwBgwGLAZIBmgGhAakBsQG5AcEByQHRAdkB4QHpAfIB+gIDAgwCFAId
+AiYCLwI4AkECSwJUAl0CZwJxAnoChAKOApgCogKsArYCwQLLAtUC4ALrAvUDAAMLAxYDIQMtAzgDQwNP
+A1oDZgNyA34DigOWA6IDrgO6A8cD0wPgA+wD+QQGBBMEIAQtBDsESARVBGMEcQR+BIwEmgSoBLYExATT
+BOEE8AT+BQ0FHAUrBToFSQVYBWcFdwWGBZYFpgW1BcUF1QXlBfYGBgYWBicGNwZIBlkGagZ7BowGnQav
+BsAG0QbjBvUHBwcZBysHPQdPB2EHdAeGB5kHrAe/B9IH5Qf4CAsIHwgyCEYIWghuCIIIlgiqCL4I0gjn
+CPsJEAklCToJTwlkCXkJjwmkCboJzwnlCfsKEQonCj0KVApqCoEKmAquCsUK3ArzCwsLIgs5C1ELaQuA
+C5gLsAvIC+EL+QwSDCoMQwxcDHUMjgynDMAM2QzzDQ0NJg1ADVoNdA2ODakNww3eDfgOEw4uDkkOZA5/
+DpsOtg7SDu4PCQ8lD0EPXg96D5YPsw/PD+wQCRAmEEMQYRB+EJsQuRDXEPURExExEU8RbRGMEaoRyRHo
+EgcSJhJFEmQShBKjEsMS4xMDEyMTQxNjE4MTpBPFE+UUBhQnFEkUahSLFK0UzhTwFRIVNBVWFXgVmxW9
+FeAWAxYmFkkWbBaPFrIW1hb6Fx0XQRdlF4kXrhfSF/cYGxhAGGUYihivGNUY+hkgGUUZaxmRGbcZ3RoE
+GioaURp3Gp4axRrsGxQbOxtjG4obshvaHAIcKhxSHHscoxzMHPUdHh1HHXAdmR3DHeweFh5AHmoelB6+
+HukfEx8+H2kflB+/H+ogFSBBIGwgmCDEIPAhHCFIIXUhoSHOIfsiJyJVIoIiryLdIwojOCNmI5QjwiPw
+JB8kTSR8JKsk2iUJJTglaCWXJccl9yYnJlcmhya3JugnGCdJJ3onqyfcKA0oPyhxKKIo1CkGKTgpaymd
+KdAqAio1KmgqmyrPKwIrNitpK50r0SwFLDksbiyiLNctDC1BLXYtqy3hLhYuTC6CLrcu7i8kL1ovkS/H
+L/4wNTBsMKQw2zESMUoxgjG6MfIyKjJjMpsy1DMNM0YzfzO4M/E0KzRlNJ402DUTNU01hzXCNf02NzZy
+Nq426TckN2A3nDfXOBQ4UDiMOMg5BTlCOX85vDn5OjY6dDqyOu87LTtrO6o76DwnPGU8pDzjPSI9YT2h
+PeA+ID5gPqA+4D8hP2E/oj/iQCNAZECmQOdBKUFqQaxB7kIwQnJCtUL3QzpDfUPARANER0SKRM5FEkVV
+RZpF3kYiRmdGq0bwRzVHe0fASAVIS0iRSNdJHUljSalJ8Eo3Sn1KxEsMS1NLmkviTCpMcky6TQJNSk2T
+TdxOJU5uTrdPAE9JT5NP3VAnUHFQu1EGUVBRm1HmUjFSfFLHUxNTX1OqU/ZUQlSPVNtVKFV1VcJWD1Zc
+VqlW91dEV5JX4FgvWH1Yy1kaWWlZuFoHWlZaplr1W0VblVvlXDVchlzWXSddeF3JXhpebF69Xw9fYV+z
+YAVgV2CqYPxhT2GiYfViSWKcYvBjQ2OXY+tkQGSUZOllPWWSZedmPWaSZuhnPWeTZ+loP2iWaOxpQ2ma
+afFqSGqfavdrT2una/9sV2yvbQhtYG25bhJua27Ebx5veG/RcCtwhnDgcTpxlXHwcktypnMBc11zuHQU
+dHB0zHUodYV14XY+dpt2+HdWd7N4EXhueMx5KnmJeed6RnqlewR7Y3vCfCF8gXzhfUF9oX4BfmJ+wn8j
+f4R/5YBHgKiBCoFrgc2CMIKSgvSDV4O6hB2EgITjhUeFq4YOhnKG14c7h5+IBIhpiM6JM4mZif6KZIrK
+izCLlov8jGOMyo0xjZiN/45mjs6PNo+ekAaQbpDWkT+RqJIRknqS45NNk7aUIJSKlPSVX5XJljSWn5cK
+l3WX4JhMmLiZJJmQmfyaaJrVm0Kbr5wcnImc951kndKeQJ6unx2fi5/6oGmg2KFHobaiJqKWowajdqPm
+pFakx6U4pammGqaLpv2nbqfgqFKoxKk3qamqHKqPqwKrdavprFys0K1ErbiuLa6hrxavi7AAsHWw6rFg
+sdayS7LCszizrrQltJy1E7WKtgG2ebbwt2i34LhZuNG5SrnCuju6tbsuu6e8IbybvRW9j74KvoS+/796
+v/XAcMDswWfB48JfwtvDWMPUxFHEzsVLxcjGRsbDx0HHv8g9yLzJOsm5yjjKt8s2y7bMNcy1zTXNtc42
+zrbPN8+40DnQutE80b7SP9LB00TTxtRJ1MvVTtXR1lXW2Ndc1+DYZNjo2WzZ8dp22vvbgNwF3IrdEN2W
+3hzeot8p36/gNuC94UThzOJT4tvjY+Pr5HPk/OWE5g3mlucf56noMui86Ubp0Opb6uXrcOv77IbtEe2c
+7ijutO9A78zwWPDl8XLx//KM8xnzp/Q09ML1UPXe9m32+/eK+Bn4qPk4+cf6V/rn+3f8B/yY/Sn9uv5L
+/tz/bf//0iIjJCVaJGNsYXNzbmFtZVgkY2xhc3Nlc18QEE5TQml0bWFwSW1hZ2VSZXCjJCYnWk5TSW1h
+Z2VSZXBYTlNPYmplY3TSIiMpKldOU0FycmF5oikn0iIjLC1eTlNNdXRhYmxlQXJyYXmjLCkn0y8wCTEy
+M1dOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAAEAOAC9IiIzU2V05TQ29sb3KiNSfSIiM4OVdOU0ltYWdl
+ojgnXxAPTlNLZXllZEFyY2hpdmVy0Tw9VHJvb3SAAQAIABEAGgAjAC0AMgA3AEUASwBUAFsAaABvAHcA
+eQB+AIAAggCHAJIAlACWAJgAnQCgAKIApACmAKgArQDEAMYAyEYaRh9GKkYzRkZGSkZVRl5GY0ZrRm5G
+c0aCRoZGjUaVRqJGp0apRqtGsEa4RrtGwEbIRstG3UbgRuUAAAAAAAACAQAAAAAAAAA+AAAAAAAAAAAA
+AAAAAABG5w
+</mutableData>
+        </image>
         <image name="LOGOS" width="748" height="270"/>
-        <image name="icon_google_locator_60" width="60" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="abI-nR-PND"/>
+        <segue reference="2FT-EA-3D2"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
 </document>
